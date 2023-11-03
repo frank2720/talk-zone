@@ -55,17 +55,30 @@ class TalkController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Talk $talk)
+    public function edit(Talk $talk):View
     {
-        //
+        $this->authorize('update', $talk);
+        return view('talks.edit', [
+            'talk' => $talk,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Talk $talk)
+    public function update(Request $request, Talk $talk):RedirectResponse
     {
-        //
+        $this->authorize('update', $talk);
+
+        $validated = $request->validate([
+
+            'message' => 'required|string|max:255',
+
+        ]);
+
+        $talk->update($validated);
+
+        return redirect(route('talks.index'));
     }
 
     /**

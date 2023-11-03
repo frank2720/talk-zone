@@ -29,9 +29,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth','verified'])->group(function (){
+/*Route::middleware(['auth','verified'])->group(function (){
     Route::get('/talks', [TalkController::class, 'index'])->name('talks.index');
     Route::post('/talks',[TalkController::class, 'store'])->name('talks.store');
-});
+    Route::get('/talks', [TalkController::class, 'edit'])->name('talks.edit');
+    Route::patch('/talks', [TalkController::class, 'update'])->name('talks.update');
+});*/
 
+Route::resource('talks',TalkController::class)
+     ->only(['index', 'store', 'edit', 'update'])
+     ->middleware(['auth','verified']);
 require __DIR__.'/auth.php';
