@@ -15,7 +15,9 @@ class TalkController extends Controller
      */
     public function index():View
     {
-        return view('talks.index');
+        return view('talks.index', [
+            'talks' => Talk::with('user')->latest()->get(),
+        ]);
     }
 
     /**
