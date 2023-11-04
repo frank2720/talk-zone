@@ -43,9 +43,9 @@ class TalkPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Talk $talk)
+    public function delete(User $user, Talk $talk): bool
     {
-        //
+        return $this->update($user, $talk);
     }
 
     /**

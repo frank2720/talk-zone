@@ -6,6 +6,7 @@ use App\Models\Talk;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
 class TalkController extends Controller
@@ -16,7 +17,7 @@ class TalkController extends Controller
     public function index():View
     {
         return view('talks.index', [
-            'talks' => Talk::with('user')->latest()->get(),
+            'talks' => Talk::with('user')->oldest()->get(),
         ]);
     }
 
@@ -84,8 +85,10 @@ class TalkController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Talk $talk)
+    public function destroy(Talk $talk):RedirectResponse
     {
-        //
+        $this->authorize('delete', $talk);
+        $talk->delete();
+        return redirect(route('talks.index'));
     }
 }
