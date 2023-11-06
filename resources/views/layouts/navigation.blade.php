@@ -2,7 +2,7 @@
     <div class="container sm:px-4 lg:px-8 flex flex-wrap items-center justify-between lg:flex-nowrap">
         
         <a class="inline-block mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline" href="{{route('home')}}">
-            <img src="images/log.svg" alt="alternative" class="h-8" />
+            <img src="{{asset('images/log.svg')}}" alt="alternative" class="h-8" />
         </a>
 
         <button class="background-transparent rounded text-xl leading-none hover:no-underline focus:no-underline lg:hidden lg:text-gray-400" type="button" data-toggle="offcanvas">

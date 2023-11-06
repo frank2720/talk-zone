@@ -9,8 +9,18 @@
         <meta name="description" content="Pudfra talk is a place for conversation about computer and science technology inclusive of mathematics" />
         <meta name="author" content="Your name" />
 
+         <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+         <meta property="og:site_name" content="pudfra-talk" /> <!-- website name -->
+         <meta property="og:site" content="" /> <!-- website link -->
+         <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+         <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+         <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+         <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+         <meta name="twitter:card" content="summary_large_image" /> <!-- to have large image post format in Twitter -->
+ 
+
         <!--favicon-->
-        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+        <link rel="icon" type="image/x-icon" href="{{asset('images/favicon.png')}}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -21,11 +31,11 @@
         <!-- Styles -->
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-        <link href="css/fontawesome-all.css" rel="stylesheet" />
+        <link href="{{asset('css/fontawesome-all.css')}}" rel="stylesheet" />
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-        <link href="css/swiper.css" rel="stylesheet" />
-        <link href="css/magnific-popup.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="{{asset('css/swiper.css')}}" rel="stylesheet" />
+        <link href="{{asset('css/magnific-popup.css')}}" rel="stylesheet" />
+        <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -46,6 +56,43 @@
             <!-- Page Content -->
             <main>
                 {{ $slot }}
+            <!-- Footer -->
+            <div class="footer">
+            <div class="container px-4 sm:px-8">
+                <div class="social-container">
+                    <span class="fa-stack">
+                        <a href="https://github.com/frank2720">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="https://twitter.com/pudfra">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="https://wa.me/254741061815">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-whatsapp fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="#your-link">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </div> <!-- end of social-container -->
+            </div> <!-- end of container -->
+    
+            <!-- end of footer -->
+
+
+            
+            <!-- end of container -->
+            </div> <!-- end of copyright -->
             </main>
         </div>
         <!-- Scripts -->
