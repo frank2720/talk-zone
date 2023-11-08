@@ -79,9 +79,9 @@
                         </a>
                     </span>
                     <span class="fa-stack">
-                        <a href="#your-link">
+                        <a href="mailto:otienofrank477@gmail.com">
                             <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            <i class="fa fa-envelope fa-stack-1x"></i>
                         </a>
                     </span>
                 </div> <!-- end of social-container -->
