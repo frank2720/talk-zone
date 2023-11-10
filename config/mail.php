@@ -101,8 +101,9 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'otienofrank@pudfra-talk.xyz'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'name' => env('MAIL_FROM_NAME', 'Pudfra-talk'),
     ],
+    'reply_to'=> ['address' => 'otienof534@gmail.com', 'name' => 'Pudfra-talk'],
 
     /*
     |--------------------------------------------------------------------------
